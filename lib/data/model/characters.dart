@@ -1,12 +1,12 @@
 import 'dart:convert';
 
-Characters charactersFromJson(String str) =>
-    Characters.fromJson(json.decode(str));
+Character charactersFromJson(String str) =>
+    Character.fromJson(json.decode(str));
 
-String charactersToJson(Characters data) => json.encode(data.toJson());
+String charactersToJson(Character data) => json.encode(data.toJson());
 
-class Characters {
-  Characters({
+class Character {
+  Character({
     this.id,
     this.name,
     this.status,
@@ -34,7 +34,7 @@ class Characters {
   String url;
   DateTime created;
 
-  factory Characters.fromJson(Map<String, dynamic> json) => Characters(
+  factory Character.fromJson(Map<String, dynamic> json) => Character(
         id: json["id"],
         name: json["name"],
         status: json["status"],

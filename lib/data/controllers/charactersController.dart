@@ -4,11 +4,13 @@ import 'package:getxflutterexample/data/rickAndMortyService.dart';
 import 'package:getxflutterexample/data/model/characters.dart';
 
 class CharacterController extends GetxController {
-  List<Characters> _characters = [];
+  List<Character> _characters = [];
 
-  List<Characters> get getCharacters {
+  List<Character> get getCharacters {
     return this._characters;
   }
+
+  var characterObservable = Character().obs;
 
   final RickAndMortyService rickAndMortyService =
       Get.find<RickAndMortyService>();
