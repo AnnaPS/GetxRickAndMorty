@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:getxflutterexample/data/model/characters.dart';
+import 'package:getxflutterexample/presentation/pages/detail_character_page.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class CharacterCard extends StatelessWidget {
@@ -9,11 +11,14 @@ class CharacterCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(borderRadius: BorderRadius.circular(20)),
+    return InkWell(
+      onTap: () {
+        Get.to(DetailCharacterPage(), arguments: character);
+      },
       child: Card(
+        clipBehavior: Clip.hardEdge,
         shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.only(topLeft: Radius.circular(20))),
+            borderRadius: BorderRadius.only(topLeft: Radius.circular(40))),
         elevation: 8,
         color: Colors.grey[200],
         margin: EdgeInsets.all(10.0),

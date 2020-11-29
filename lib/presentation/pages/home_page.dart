@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:getxflutterexample/data/controllers/charactersController.dart';
+import 'package:getxflutterexample/presentation/widgets/characterCardCustom.dart';
 import 'package:getxflutterexample/presentation/widgets/character_card.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -36,13 +37,11 @@ class HomePage extends StatelessWidget {
                       height: 16,
                     ),
                     Flexible(
-                      child: GridView.builder(
-                          gridDelegate:
-                              SliverGridDelegateWithFixedCrossAxisCount(
-                                  crossAxisCount: 2),
+                      fit: FlexFit.tight,
+                      child: ListView.builder(
                           itemCount: controller.getCharacters.length,
                           itemBuilder: (context, index) =>
-                              CharacterCard(controller.getCharacters[index])),
+                              CardCharacter(controller.getCharacters[index])),
                     ),
                   ],
                 ),
