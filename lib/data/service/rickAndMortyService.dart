@@ -1,6 +1,6 @@
 import 'dart:convert';
 import 'package:get/get_state_manager/get_state_manager.dart';
-import 'model/characters.dart';
+import 'package:getxflutterexample/data/model/characters.dart';
 import 'package:http/http.dart' as http;
 
 class RickAndMortyService extends GetxService {

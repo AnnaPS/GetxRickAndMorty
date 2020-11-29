@@ -18,7 +18,10 @@ class CharacterCard extends StatelessWidget {
       child: Card(
         clipBehavior: Clip.hardEdge,
         shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.only(topLeft: Radius.circular(40))),
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(40),
+          ),
+        ),
         elevation: 8,
         color: Colors.grey[200],
         margin: EdgeInsets.all(10.0),

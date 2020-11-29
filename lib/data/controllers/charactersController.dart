@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
-import 'package:getxflutterexample/data/rickAndMortyService.dart';
 import 'package:getxflutterexample/data/model/characters.dart';
+import 'package:getxflutterexample/data/service/rickAndMortyService.dart';
 
 class CharacterController extends GetxController {
   List<Character> _characters = [];
@@ -16,10 +16,12 @@ class CharacterController extends GetxController {
       Get.find<RickAndMortyService>();
 
   @override
-  void onInit() async {
+  void onInit() {
     super.onInit();
-    _characters = await rickAndMortyService.getCharacters();
-    update();
+    Future.delayed(const Duration(milliseconds: 1500), () async {
+      _characters = await rickAndMortyService.getCharacters();
+      update();
+    });
   }
 
   @override

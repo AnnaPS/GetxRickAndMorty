@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:getxflutterexample/data/model/characters.dart';
+import 'package:getxflutterexample/presentation/widgets/footer_info.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class DetailCharacterPage extends StatelessWidget {
@@ -10,6 +11,7 @@ class DetailCharacterPage extends StatelessWidget {
   Widget build(BuildContext context) {
     Character character = Get.arguments;
     return Scaffold(
+      backgroundColor: Colors.grey[200],
       appBar: AppBar(
         title: Text(
           character.name,
@@ -17,6 +19,7 @@ class DetailCharacterPage extends StatelessWidget {
         ),
       ),
       body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Hero(
             tag: character.id,
@@ -33,9 +36,26 @@ class DetailCharacterPage extends StatelessWidget {
                   )),
             ),
           ),
-          FilterChip(
-            label: Text("Hola"),
-          )
+          SizedBox(
+            height: 30,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              FooterInfoWidget(character.status, "STATUS"),
+              FooterInfoWidget(character.location.name, "LOCATION"),
+            ],
+          ),
+          SizedBox(
+            height: 30,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              FooterInfoWidget(character.gender, "GENDER"),
+              FooterInfoWidget(character.species, "SPECIES"),
+            ],
+          ),
         ],
       ),
     );

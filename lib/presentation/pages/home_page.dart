@@ -3,8 +3,8 @@ import 'package:get/get.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:getxflutterexample/data/controllers/charactersController.dart';
 import 'package:getxflutterexample/presentation/widgets/characterCardCustom.dart';
-import 'package:getxflutterexample/presentation/widgets/character_card.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:lottie/lottie.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key key}) : super(key: key);
@@ -12,6 +12,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey[200],
       appBar: AppBar(
         title: Text(
           'Rick and Morty',
@@ -21,7 +22,7 @@ class HomePage extends StatelessWidget {
       body: GetBuilder<CharacterController>(builder: (controller) {
         return controller.getCharacters.length == 0
             ? Center(
-                child: CircularProgressIndicator(),
+                child: Lottie.asset('assets/morty.json'),
               )
             : Padding(
                 padding: const EdgeInsets.all(16.0),

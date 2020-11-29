@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:getxflutterexample/data/rickAndMortyService.dart';
 import 'package:getxflutterexample/data/controllers/charactersController.dart';
+import 'package:getxflutterexample/data/service/rickAndMortyService.dart';
 import 'package:getxflutterexample/presentation/pages/home_page.dart';
 
 void main() {
